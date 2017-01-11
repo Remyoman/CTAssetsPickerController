@@ -97,6 +97,11 @@ NSString * const CTAssetsPickerDidDeselectAssetNotification = @"CTAssetsPickerDi
     [self registerChangeObserver];
 }
 
+- (UIInterfaceOrientationMask)supportedInterfaceOrientations 
+{
+    return UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone ? UIInterfaceOrientationMaskPortrait : UIInterfaceOrientationMaskAll;
+}
+
 - (void)dealloc
 {
     [self removeKeyValueObserver];
